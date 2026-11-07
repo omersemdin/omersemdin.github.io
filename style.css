@@ -479,3 +479,14 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
 .empty-blog .icon { flex: none; }
 .empty-blog h3 { font-size: 1.05rem; margin-bottom: 2px; }
 .filters[hidden], .btn[hidden] { display: none; }
+
+/* Yazı içi puan kutusu */
+.score-box {
+  display: flex; gap: 22px; align-items: center; margin: 32px 0 8px; padding: 22px 24px;
+  border-radius: var(--radius); border: 1px solid var(--border-hover);
+  background: radial-gradient(ellipse at left, rgba(94,234,212,.08), transparent 60%), var(--card);
+}
+.score-box .score { font-size: 3rem; line-height: 1; color: var(--accent); flex: none; }
+.score-box .score span { font-size: 1.1rem; color: var(--muted); }
+.score-box p { margin-bottom: 6px !important; font-size: .98rem; }
+@media (max-width: 520px) { .score-box { flex-direction: column; align-items: flex-start; } }

@@ -6,6 +6,48 @@
 // kategori: "gezi", "spor" veya "oyun"
 // kapak: 2 renk (kartın arka plan geçişi) + emoji
 const POSTS = [
+  {
+    id: "ghost-of-tsushima",
+    baslik: "Hep Bir Oyunun İçindeydim: Ghost of Tsushima",
+    tarih: "2026-11-07",
+    kategori: "oyun",
+    emoji: "⛩️",
+    kapak: ["#b91c1c", "#1e1b4b"],
+    ozet: "Atari kasetlerinden Dota 2'ye, oradan da beni yeniden hikâyeli oyunlara bağlayan Ghost of Tsushima'ya uzanan bir yolculuk.",
+    icerik: `
+      <p>Kendimi bildim bileli hep bir oyunun içinde olmuşumdur. Küçükken sokakta ve parkta abilerle futbol, evde Mert Abi ile Atari, annemle pişti, okulda basketbol… Bu süreç, yanlış hatırlamıyorsam 3. sınıfta kendime ait bir bilgisayarım olmasıyla farklı bir evrene adım atmamla devam etti.</p>
+      <p>Aslında çok da farklı bir evren değildi, çünkü evde Atari'yi çok oynardık. Kaseti sürekli üfleyerek çalıştırmak, kaybetmeye bir türlü tenezzül edememek… Bunlar o zamanlardan kalma. Bilgisayar geldiğinde ise Atari'ye kıyasla daha güzel görüntüler ve çok daha fazla çeşitlilik beni içine iyice çekti.</p>
+
+      <h2>Rekabetin peşinde</h2>
+      <p>Küçüklüğümden beri içimde hep rekabetçi bir taraf vardı ve oyun oynarken de bu tarafımı yaşamayı seviyordum. Ne yazık ki o zamanlar internet evlerde yaygın olmadığı için oynadığım oyunlar bu rekabetçi tarafımı pek tatmin etmiyordu. Beni en çok tatmin eden oyun FIFA 06'ydı.</p>
+      <p>2010–2011 civarında internet artık yaygınlaşmaya başlamıştı. O zamanlar kuzenim Barış Abi, Point Blank adında bir oyun oynuyordu ve beni de bu oyuna bulaştırdı 🙂 Benim farkında olmadığım şey ise oyunlara çok hızlı adapte olmammış. Bu kadar hızlı adapte olunca abiler beni çok sevdi ve hemen klan savaşlarına dahil ettiler. Bu oyunla birlikte o rekabetçi tatmin duygusu nihayet gelmişti. Tatil günlerinde sabah akşam bu oyunu oynardık.</p>
+      <p>Sonra, Allah'ın belası 2013 senesinde bir arkadaşımızın abisine Dota 2 Beta Key'i gelmiş, o da arkadaşıma vermiş. Arkadaşım da bizimle paylaştı ve "Hadi indirin de birlikte oynayalım" diye bir gün yaşadık. O günden sonra, aradan 13 yıl geçmesine rağmen hâlâ bu oyunu takip edip oynayacağımı bilmiyordum. Bunlara FIFA, CS ve LoL gibi oyunlar da eklenince rekabetçi olmayan bir oyunu oynayamaz hale geldim; resmen sıkılıyordum. GTA 5'i bile oynuyordum ama hiç tatmin etmiyordu.</p>
+
+      <h2>Tatmin duygusu azalınca</h2>
+      <p>Yıllar geçtikçe bilgisayar oyunlarının verdiği tatmin duygusu da azalmaya başladı. Bazen "Acaba eskisi kadar iyi değilim de ondan mı?" diyordum, ama bir bakıyorum yine herkesi tokatlıyorum; demek ki sebep bu değilmiş 🙂 Belki de sürekli aynı şeyleri yaşamaktan sıkılmıştım.</p>
+      <p>Uzun bir aradan sonra Red Dead Redemption 2'ye başlamaya karar verdim ve iyi ki de vermişim. Bu kadar derin hikâyeli bir oyun oynamak, içimdeki oyun oynama isteğini yeniden ateşledi. Ardından Hades'i bitirdim, ama yine de rekabetçi oyunların verdiği hazzı alamıyordum.</p>
+
+      <h2>Ghost of Tsushima'ya giden yol</h2>
+      <p>Geçenlerde yeni aldığım PlayStation'da oyun ararken Ghost of Tsushima'yı gördüm. Puanları çok yüksekti ve oyun Japonya'da geçiyordu. Zaten çok yakın bir zamanda Japonya'ya gitmiş ve ülkeye bayılmıştım; "Neden denemeyeyim?" dedim.</p>
+      <p>Yine de uzun bir süre beklettim. Belki de yine rekabetçi tarafım yüzünden başlamak istemedim: Sürekli FIFA'yı açıp Ultimate Team'e girmenin, kolu kırmakla kırmamak arasında gidip gelmenin verdiği hazdan vazgeçemiyordum. Sonra bir gün tam maça girdim ve oyun kapandı. Oyun beni doğrudan kaybetmiş saydı. "Başlayacağım böyle oyuna" deyip Ghost of Tsushima'ya geçtim.</p>
+
+      <h2>İlk izlenimler</h2>
+      <p>Oyun daha ilk dakikalarda beni resmen içine çekti. 2020 yapımı olmasına rağmen (PlayStation 5 için hazırlanan Director's Cut sürümü 2021'de çıktı) görselliği bu kadar detaylı bir oyunu uzun zamandır görmemiştim. İlk başta Elden Ring tarzı bir oyun beklerken, bende daha çok gelişmiş bir Assassin's Creed hissi uyandırdı.</p>
+      <p>Oynanışın çok karmaşık olacağını düşünüyordum ama çok basit çıktı: İki tuşa basarak düşmanı öldürebiliyorsunuz. Ancak bu, oyunun çok kolay olduğu anlamına gelmiyor; her düşmana karşı farklı bir duruş (stance) seçip ona göre oynamak gerekiyor. Hikâyenin yarısına gelmiş olmama rağmen hangi düşmana nasıl saldırmam gerektiğine ya da Ghost yeteneklerinden hangisini kullanacağıma hâlâ tam karar veremiyorum. Oynanış bu kadar kapsamlı tutulurken hikâyesi, müzikleri ve içerikleri de aynı seviyede tutulmuş.</p>
+
+      <h2>Değerlendirme</h2>
+      <p>Bilmiyorum, belki de uzun zaman sonra hissettiklerimi paylaştığım bir yazı olduğu için Ghost of Tsushima'dan çok, neredeyse emeklediğim yıllardan başlayan bir yazı oldu.</p>
+      <p>Ghost of Tsushima'yı değerlendirmem gerekirse, kendi açımdan harika bir oyun olmuş derim. Elbette birileri çıkıp "Böyle oyun mu olur, şurası şöyle kötü" diyecektir. Ben anlamam; adamlar hem içinde bol bol Japonya olan bir oyun yapmış hem de sürekli savaşılabilecek bir oyun yapmış. Bence çok fazla şey beklemeye gerek yok.</p>
+
+      <div class="score-box">
+        <div class="score mono">9<span>/10</span></div>
+        <div>
+          <p><strong>Artılar:</strong> Detaylı görsellik, basit ama derin savaş sistemi, hikâye ve müzikler, bol bol Japonya.</p>
+          <p><strong>Eksiler:</strong> Konuşmalar geçilemiyor, bazen sıkılıyorum (napabilirim 😞). Bir de bir bölümde bug'a girip boşa kılıç salladım.</p>
+        </div>
+      </div>
+    `,
+  },
 ];
 
 // --- ÖRNEK YAZILAR (yayında değil) ---
