@@ -367,6 +367,35 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
 .status.idea { color: var(--muted); }
 .iot .icon { background: rgba(251,191,36,.06); border-color: rgba(251,191,36,.2); }
 
+/* --- Skor tutucu cihazı --- */
+.device-wrap { justify-self: center; width: 100%; max-width: 360px; display: flex; flex-direction: column; align-items: center; gap: 18px; }
+.device {
+  position: relative; width: 100%; padding: 16px 16px 30px; border-radius: 18px;
+  background: linear-gradient(160deg, #1f2937, #111827); border: 1px solid var(--border);
+  box-shadow: 0 30px 70px rgba(251,191,36,.08);
+}
+.esp { position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%); font-size: 9.5px; color: rgba(251,191,36,.6); letter-spacing: .15em; }
+.screen { border-radius: 10px; padding: 14px; background: #0b1020; border: 1px solid rgba(251,191,36,.25); }
+.scr-top { font-size: 10px; letter-spacing: .15em; color: #fbbf24; text-align: center; margin-bottom: 12px; }
+.teams { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.team { position: relative; border-radius: 10px; padding: 12px 10px 14px; text-align: center; background: rgba(255,255,255,.03); border: 1px solid var(--border); }
+.team span { font-size: 11.5px; color: var(--muted); }
+.team b { display: block; font-size: 2rem; font-weight: 500; line-height: 1.2; }
+.team.t1 b { color: #5eead4; } .team.t2 b { color: #a5b4fc; }
+.team i {
+  position: absolute; right: 8px; top: 8px; width: 20px; height: 20px; border-radius: 6px;
+  display: grid; place-items: center; font-style: normal; font-size: 13px;
+  background: rgba(255,255,255,.06); color: var(--text);
+}
+.team.t1 i { animation: tap 3.5s ease-in-out infinite; }
+@keyframes tap { 0%, 80%, 100% { transform: scale(1); background: rgba(255,255,255,.06); } 88% { transform: scale(.85); background: rgba(94,234,212,.4); } }
+.scr-bar { display: flex; justify-content: space-between; margin-top: 10px; font-size: 10px; color: var(--muted); }
+.tg { width: 92%; align-self: flex-end; border-radius: 14px; padding: 12px 14px; background: var(--bg-2); border: 1px solid var(--border); }
+.tg-head { display: flex; align-items: center; gap: 8px; font-size: 10.5px; color: var(--muted); margin-bottom: 8px; }
+.tg-dot { width: 8px; height: 8px; border-radius: 50%; background: #38bdf8; }
+.tg-msg { font-size: 13px; line-height: 1.55; padding: 10px 12px; border-radius: 12px 12px 12px 4px; background: rgba(56,189,248,.1); border: 1px solid rgba(56,189,248,.2); }
+.workshop-note { margin-top: 16px; text-align: center; }
+
 /* --- Blog --- */
 .section-head.row { display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; flex-wrap: wrap; }
 .small { font-size: 12px; }

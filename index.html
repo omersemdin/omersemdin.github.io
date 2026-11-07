@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=8" />
+  <link rel="stylesheet" href="style.css?v=9" />
 </head>
 <body>
   <div class="bg-grid" aria-hidden="true"></div>
@@ -44,7 +44,6 @@
       <dl class="stats">
         <div><dt class="mono" data-count="1">0</dt><dd>Mobil uygulama</dd></div>
         <div><dt class="mono" data-count="7">0</dt><dd>Aktif otomasyon</dd></div>
-        <div><dt class="mono" data-count="5" data-suffix="+">0</dt><dd>IoT / DIY proje</dd></div>
         <div><dt class="mono" data-count="100" data-suffix="+">0</dt><dd>Saat / ay kazanç</dd></div>
       </dl>
     </section>
@@ -453,57 +452,52 @@
       <div class="section-head">
         <span class="mono tag">03 / iot & diy</span>
         <h2>Atölyeden projeler</h2>
-        <p class="muted">Lehim, sensörler ve biraz da kod — evde ve masada yaptığım şeyler.</p>
+        <p class="muted">Lehim, ekranlar ve biraz da kod: işten arta kalan zamanlarda yaptıklarım.</p>
       </div>
 
-      <div class="filters" data-target="#iot-grid">
-        <button class="filter active" data-filter="all">Tümü</button>
-        <button class="filter" data-filter="calisiyor">Çalışıyor</button>
-        <button class="filter" data-filter="prototip">Prototip</button>
-        <button class="filter" data-filter="fikir">Fikir aşamasında</button>
-      </div>
+      <article class="card feature exbot iot-feature">
+        <div class="feature-text">
+          <div class="app-title">
+            <span class="app-icon emoji-icon">🎲</span>
+            <div>
+              <h3>Board Game Skor Tutucu</h3>
+              <p class="exbot-sub">Dokunmatik ekranlı, Telegram bağlantılı</p>
+              <p class="mono small app-sub">IoT · ESP32</p>
+            </div>
+          </div>
+          <p>
+            Kutu oyunu akşamları için geliştirdiğim bir skor tutma cihazı. ESP32'ye bağlı dokunmatik ekran üzerinden
+            takımlar oluşturulur ve skorlar girilir; kâğıt kaleme gerek kalmaz. Cihaz Telegram'a bağlı olduğu için
+            takım bilgileri ve skorlar aynı anda telefona da gelir.
+          </p>
+          <ul class="checks">
+            <li>Dokunmatik ekrandan takım ve skor girişi</li>
+            <li>Telegram bağlantısı: takım verileri ve skorlar telefona anlık bildirim olarak düşer</li>
+          </ul>
+          <div class="chips">
+            <span>ESP32</span><span>Dokunmatik ekran</span><span>Telegram Bot</span><span>Wi-Fi</span>
+          </div>
+        </div>
 
-      <div class="grid" id="iot-grid">
-        <article class="card auto iot" data-cat="calisiyor">
-          <div class="auto-top"><span class="icon">🌡️</span><span class="status mono">● çalışıyor</span></div>
-          <h3>Akıllı Ev Sensör Ağı</h3>
-          <p>Odalardaki sıcaklık ve nemi ölçüp telefona anlık grafik olarak gönderir.</p>
-          <p class="spec mono">ESP32 · DHT22 · MQTT</p>
-          <div class="chips"><span>Home Assistant</span><span>Grafana</span></div>
-        </article>
-
-        <article class="card auto iot" data-cat="calisiyor">
-          <div class="auto-top"><span class="icon">🪴</span><span class="status mono">● çalışıyor</span></div>
-          <h3>Otomatik Bitki Sulama</h3>
-          <p>Toprak nemi düşünce pompayı çalıştırır, su azalınca bildirim atar.</p>
-          <p class="spec mono">Arduino · nem sensörü · röle</p>
-          <div class="chips"><span>C++</span></div>
-        </article>
-
-        <article class="card auto iot" data-cat="prototip">
-          <div class="auto-top"><span class="icon">💡</span><span class="status mono warn">◐ prototip</span></div>
-          <h3>Ortam Işığı Kontrolcüsü</h3>
-          <p>Ekran rengine göre arka plan LED'lerini değiştiren masa aydınlatması.</p>
-          <p class="spec mono">WS2812B · ESP8266</p>
-          <div class="chips"><span>WLED</span><span>3D baskı kutu</span></div>
-        </article>
-
-        <article class="card auto iot" data-cat="prototip">
-          <div class="auto-top"><span class="icon">🚪</span><span class="status mono warn">◐ prototip</span></div>
-          <h3>Kapı / Posta Kutusu Bildirimi</h3>
-          <p>Kapı açıldığında veya posta geldiğinde telefona bildirim gönderir.</p>
-          <p class="spec mono">Reed switch · LoRa</p>
-          <div class="chips"><span>Telegram Bot</span></div>
-        </article>
-
-        <article class="card auto iot" data-cat="fikir">
-          <div class="auto-top"><span class="icon">🏃</span><span class="status mono idea">○ fikir</span></div>
-          <h3>Koşu Verisi Paneli</h3>
-          <p>Spor saatinden gelen verileri toplayıp kişisel bir antrenman panelinde gösterecek.</p>
-          <p class="spec mono">Raspberry Pi · API</p>
-          <div class="chips"><span>Python</span></div>
-        </article>
-      </div>
+        <div class="device-wrap" aria-hidden="true">
+          <div class="device">
+            <div class="screen">
+              <p class="mono scr-top">TUR 5 · SKOR</p>
+              <div class="teams">
+                <div class="team t1"><span>Takım A</span><b class="mono">42</b><i>+</i></div>
+                <div class="team t2"><span>Takım B</span><b class="mono">38</b><i>+</i></div>
+              </div>
+              <div class="scr-bar mono"><span>↺ geri al</span><span>✓ turu bitir</span></div>
+            </div>
+            <span class="esp mono">ESP32</span>
+          </div>
+          <div class="tg">
+            <div class="tg-head mono"><span class="tg-dot"></span>Skor Botu · Telegram</div>
+            <div class="tg-msg">🎲 <b>Tur 5 bitti</b><br />Takım A: 42 · Takım B: 38<br /><span class="muted">Lider: Takım A 🏆</span></div>
+          </div>
+        </div>
+      </article>
+      <p class="mono muted small workshop-note">🔧 Yeni projeler atölyede…</p>
     </section>
 
     <!-- BLOG -->
@@ -540,7 +534,7 @@
         </div>
         <div class="card skill-group">
           <h3>Donanım</h3>
-          <div class="chips"><span>ESP32</span><span>Arduino</span><span>Raspberry Pi</span><span>MQTT</span></div>
+          <div class="chips"><span>ESP32</span><span>Dokunmatik ekran</span><span>Telegram Bot</span></div>
         </div>
       </div>
     </section>
