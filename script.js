@@ -78,6 +78,26 @@ document.querySelectorAll(".filters").forEach((group) => {
   });
 });
 
+// Uygulama ekran görüntüsü galerisi
+document.querySelectorAll(".gallery").forEach((g) => {
+  const imgs = g.querySelectorAll(".gallery-frame img");
+  const dots = g.querySelectorAll(".gallery-dots button");
+  let i = 0, timer;
+  const show = (n) => {
+    i = (n + imgs.length) % imgs.length;
+    imgs.forEach((im, k) => im.classList.toggle("active", k === i));
+    dots.forEach((d, k) => d.classList.toggle("active", k === i));
+  };
+  const start = () => {
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    clearInterval(timer);
+    timer = setInterval(() => show(i + 1), 3500);
+  };
+  dots.forEach((d, k) => d.addEventListener("click", () => { show(k); start(); }));
+  g.querySelector(".gallery-frame").addEventListener("click", () => { show(i + 1); start(); });
+  start();
+});
+
 // Kaydırınca yumuşakça beliren kartlar
 const revealEls = document.querySelectorAll(".section-head, .card");
 revealEls.forEach((el) => el.classList.add("reveal"));

@@ -157,24 +157,34 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
 .checks { list-style: none; margin-top: 20px; display: grid; gap: 8px; }
 .checks li::before { content: "→"; color: var(--accent); margin-right: 10px; font-family: "JetBrains Mono", monospace; }
 
-.phone {
-  justify-self: center;
-  width: 220px; height: 440px; border-radius: 36px; padding: 12px;
-  background: linear-gradient(160deg, #1e293b, #0f172a);
+/* --- Uygulama: başlık, notlar, galeri --- */
+.app-title { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+.app-title h3 { margin: 0; letter-spacing: .12em; }
+.app-icon { width: 56px; height: 56px; border-radius: 14px; border: 1px solid var(--border); }
+.app-sub { color: var(--accent); }
+.app-notes { display: grid; gap: 6px; margin-top: 20px; font-size: 14px; color: var(--muted); }
+.app-notes span { margin-right: 6px; }
+.btn.soon { cursor: default; color: var(--muted); font-size: 14px; }
+.btn.soon:hover { border-color: var(--border); }
+
+.gallery { justify-self: center; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+.gallery-frame {
+  position: relative; width: 260px; aspect-ratio: 1206 / 2622;
+  border-radius: 28px; overflow: hidden;
   border: 1px solid var(--border);
-  box-shadow: 0 30px 80px rgba(129,140,248,.18), inset 0 0 0 1px rgba(255,255,255,.04);
-  animation: float 6s ease-in-out infinite;
+  box-shadow: 0 30px 80px rgba(129,140,248,.18);
 }
-@keyframes float { 50% { transform: translateY(-10px); } }
-.phone-screen {
-  height: 100%; border-radius: 26px; padding: 18px 14px;
-  background: var(--bg-2); display: flex; flex-direction: column; gap: 12px;
+.gallery-frame img {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+  opacity: 0; transition: opacity .8s ease;
 }
-.ph-bar { height: 10px; width: 50%; border-radius: 6px; background: rgba(148,163,184,.2); }
-.ph-card { height: 110px; border-radius: 14px; background: linear-gradient(135deg, rgba(94,234,212,.35), rgba(129,140,248,.35)); }
-.ph-card.small { height: 54px; background: rgba(148,163,184,.08); border: 1px solid var(--border); }
-.ph-row { display: flex; gap: 10px; }
-.ph-row span { flex: 1; height: 60px; border-radius: 12px; background: rgba(148,163,184,.1); }
+.gallery-frame img.active { opacity: 1; }
+.gallery-dots { display: flex; gap: 8px; }
+.gallery-dots button {
+  width: 8px; height: 8px; border-radius: 999px; border: 0; padding: 0; cursor: pointer;
+  background: rgba(148,163,184,.3); transition: width .3s, background .3s;
+}
+.gallery-dots button.active { width: 22px; background: var(--accent); }
 
 /* --- Otomasyonlar --- */
 .filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
@@ -263,7 +273,7 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
 @media (max-width: 760px) {
   .nav nav a:not(.nav-cta) { display: none; }
   .feature { grid-template-columns: 1fr; padding: 28px; }
-  .phone { width: 180px; height: 360px; }
+  .gallery-frame { width: 220px; }
   .hero { padding-top: 72px; }
   .stats { gap: 28px; }
 }
