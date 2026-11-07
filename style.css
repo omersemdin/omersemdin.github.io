@@ -164,6 +164,11 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
 .app-sub { color: var(--accent); }
 .app-notes { display: grid; gap: 6px; margin-top: 20px; font-size: 14px; color: var(--muted); }
 .app-notes span { margin-right: 6px; }
+.live-badge {
+  display: inline-block; font-size: 11px; color: var(--accent);
+  padding: 3px 10px; margin-bottom: 10px; border-radius: 999px;
+  background: rgba(94,234,212,.08); border: 1px solid rgba(94,234,212,.25);
+}
 .btn.soon { cursor: default; color: var(--muted); font-size: 14px; }
 .btn.soon:hover { border-color: var(--border); }
 
