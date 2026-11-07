@@ -473,3 +473,9 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
 /* Otomasyon kartları: 2 sütun (4 kart 2×2 dursun) */
 #auto-grid { grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); }
 @media (max-width: 760px) { #auto-grid { grid-template-columns: 1fr; } }
+
+/* Blog boş durumu */
+.empty-blog { grid-column: 1 / -1; display: flex; align-items: center; gap: 18px; border-style: dashed; }
+.empty-blog .icon { flex: none; }
+.empty-blog h3 { font-size: 1.05rem; margin-bottom: 2px; }
+.filters[hidden], .btn[hidden] { display: none; }

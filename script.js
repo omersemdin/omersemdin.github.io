@@ -26,12 +26,23 @@ if (typeof POSTS !== "undefined") {
 
   // Ana sayfa: son 3 yazı
   const latest = document.getElementById("latest-posts");
-  if (latest) latest.innerHTML = sorted.slice(0, 3).map(postCard).join("");
+  const empty = `
+    <div class="card empty-blog">
+      <span class="icon">✍️</span>
+      <div>
+        <h3>İlk yazılar yolda</h3>
+        <p class="muted">Gezi notları ve spor deneyimleri çok yakında burada olacak.</p>
+      </div>
+    </div>`;
+  const allBtn = document.getElementById("all-posts-btn");
+  if (allBtn && !sorted.length) allBtn.hidden = true;
+  if (latest) latest.innerHTML = sorted.length ? sorted.slice(0, 3).map(postCard).join("") : empty;
 
   // Blog sayfası: liste + tek yazı görünümü (#yazi-id)
   const grid = document.getElementById("post-grid");
   if (grid) {
-    grid.innerHTML = sorted.map(postCard).join("");
+    grid.innerHTML = sorted.length ? sorted.map(postCard).join("") : empty;
+    if (!sorted.length) document.querySelector('[data-target="#post-grid"]').hidden = true;
     const listView = document.getElementById("list-view");
     const postView = document.getElementById("post-view");
     const route = () => {
