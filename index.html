@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=5" />
+  <link rel="stylesheet" href="style.css?v=6" />
 </head>
 <body>
   <div class="bg-grid" aria-hidden="true"></div>
@@ -264,6 +264,69 @@
             <div><span class="mono">Hafta 45</span><b style="--l:5%;--w:40%"></b></div>
             <div><span class="mono">Hafta 46</span><b class="plan" style="--l:30%;--w:45%"></b></div>
             <div><span class="mono">Hafta 47</span><b class="mix" style="--l:55%;--w:35%"></b></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="card feature exbot">
+        <div class="feature-text">
+          <div class="app-title">
+            <span class="app-icon emoji-icon">✈️</span>
+            <div>
+              <h3>Sevkiyat Takibi</h3>
+              <p class="exbot-sub">Konşimento Sorgulama Sistemi</p>
+              <p class="mono small app-sub">Web uygulaması · Python + Tarayıcı</p>
+            </div>
+          </div>
+          <p>
+            Hava kargo ve ekspres kurye sevkiyatlarının güncel durumunu tek yerden gösteren bir takip sistemi.
+            Konşimento (AWB) listesini Excel'den alır, her sevkiyatın durumunu taşıyıcıların resmi API'lerinden
+            sorgular ve sonuçları sade bir web sayfasında toplar. Ekip arkadaşları dosya numarası ya da konşimento
+            numarası yazarak sevkiyatın nerede olduğunu anında görür; taşıyıcı sitelerinde tek tek arama yapmaya
+            gerek kalmaz.
+          </p>
+
+          <details class="more">
+            <summary>Tüm özellikler <span class="mono">(5)</span></summary>
+            <ul class="checks">
+              <li>Excel'deki konşimento listesinden toplu sorgu</li>
+              <li>Taşıyıcıların resmi API'lerine bağlantı</li>
+              <li>Dosya no ya da konşimento no ile anlık arama, sonuçlar kart görünümünde</li>
+              <li>Sonuçların Excel'e ve JSON'a aktarılması (Power BI'a bağlanabilir)</li>
+              <li>İç ağ sunucusunda çalışan hafif bir web arayüzü</li>
+            </ul>
+          </details>
+
+          <div class="app-notes">
+            <div><span>🧭</span> Tek ekranda tüm taşıyıcılar</div>
+            <div><span>🔗</span> Resmi API'ler</div>
+            <div><span>🌐</span> Kurulum gerektirmeyen web arayüzü</div>
+          </div>
+          <div class="chips">
+            <span>Python</span><span>REST API</span><span>HTML/JavaScript</span><span>JSON</span><span>Excel</span>
+          </div>
+        </div>
+
+        <div class="win track" aria-hidden="true">
+          <div class="win-bar"><i></i><i></i><i></i><span class="mono">sevkiyat-takip · iç ağ</span></div>
+          <div class="win-body">
+            <div class="search mono"><span>🔍</span>AWB / dosya no<b class="caret"></b></div>
+            <div class="trk-card">
+              <div class="trk-head">
+                <span class="mono">AWB 235-XXXX 4471</span>
+                <span class="pill run">yolda</span>
+              </div>
+              <ol class="trk-steps">
+                <li class="done"><b></b><span>Teslim alındı</span><em class="mono">İST</em></li>
+                <li class="done"><b></b><span>Uçağa yüklendi</span><em class="mono">İST → FRA</em></li>
+                <li class="now"><b></b><span>Aktarma merkezinde</span><em class="mono">FRA</em></li>
+                <li><b></b><span>Teslim edilecek</span><em class="mono">—</em></li>
+              </ol>
+            </div>
+            <div class="trk-mini">
+              <div><span class="mono">AWB …8820</span><span class="pill ok">teslim edildi</span></div>
+              <div><span class="mono">AWB …1093</span><span class="pill warn">gümrükte</span></div>
+            </div>
           </div>
         </div>
       </article>
