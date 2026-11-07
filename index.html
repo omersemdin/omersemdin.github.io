@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=4" />
+  <link rel="stylesheet" href="style.css?v=5" />
 </head>
 <body>
   <div class="bg-grid" aria-hidden="true"></div>
@@ -180,6 +180,90 @@
               <span style="--h:92%"></span><span style="--h:68%"></span><span style="--h:75%"></span>
             </div>
             <p class="mono small muted win-cap">Nakliyeci karnesi · Incoterms kırılımı</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="card feature exbot flip">
+        <div class="feature-text">
+          <div class="app-title">
+            <span class="app-icon emoji-icon">🌍</span>
+            <div>
+              <h3>Lojistik Takibi</h3>
+              <p class="exbot-sub">İthalat / İhracat Dashboard'u</p>
+              <p class="mono small app-sub">Veri görselleştirme · Power BI</p>
+            </div>
+          </div>
+          <p>
+            İthalat ve ihracat operasyonlarını tek ekranda toplayan interaktif bir Power BI dashboard'u.
+            Gerçekleşen ve planlanan sevkiyatları dönen bir dünya küresi üzerinde gösterir. Ülke ve sektör
+            bazında analiz, sevkiyat takvimi, nakliyeci performansı ve birleştirilebilecek sevkiyatların
+            tespiti aynı raporda yer alır. Kısıtlı bir iç ağ ortamında, standart görsellerin yetmediği
+            yerlerde özel kodlanmış görsellerle geliştirildi.
+          </p>
+
+          <details class="more">
+            <summary>Tüm özellikler <span class="mono">(7)</span></summary>
+            <ul class="checks">
+              <li>İnteraktif 3D dünya küresi: ülke üzerine gelince detay paneli açılır</li>
+              <li>Gerçekleşen / planlanan / karma sevkiyat durumu haritası</li>
+              <li>Ülkelere göre mevzuat ve uyum durumu haritası</li>
+              <li>Gantt şeklinde sevkiyat takvimi: öne çekilen ve tescil alan sevkiyatlar ayrıca işaretlenir</li>
+              <li>Sevkiyat konsolidasyon analizi: aynı alıcıya ya da ülkeye giden ve birleştirilebilecek sevkiyatları bulur</li>
+              <li>Nakliyeci performans analizi ve spot fiyat karşılaştırma tabloları</li>
+              <li>Ülke analizi tabloları (alıcı, sektör ve ay kırılımında)</li>
+            </ul>
+          </details>
+
+          <div class="app-notes">
+            <div><span>🎨</span> Özel kodlanmış görseller</div>
+            <div><span>🔒</span> İç ağ uyumlu</div>
+            <div><span>🖥️</span> Tek ekranda tüm operasyon</div>
+          </div>
+          <div class="chips">
+            <span>Power BI</span><span>DAX</span><span>Power Query</span><span>Deneb (Vega)</span><span>HTML Content</span><span>TopoJSON</span>
+          </div>
+        </div>
+
+        <div class="globe-wrap" aria-hidden="true">
+          <svg class="globe" viewBox="-150 -150 300 300">
+            <defs>
+              <radialGradient id="gl" cx="35%" cy="30%" r="75%">
+                <stop offset="0" stop-color="#1e3a5f" />
+                <stop offset="1" stop-color="#0b1222" />
+              </radialGradient>
+            </defs>
+            <circle r="138" class="halo" />
+            <circle r="120" fill="url(#gl)" stroke="rgba(94,234,212,.35)" />
+            <g class="grid-lines">
+              <ellipse rx="120" ry="40" /><ellipse rx="104" ry="20" cy="-60" /><ellipse rx="104" ry="20" cy="60" />
+              <line x1="-120" x2="120" />
+                <ellipse class="lon" cx="0" cy="0" rx="120" ry="120" style="--d:0.0s" />
+                <ellipse class="lon" cx="0" cy="0" rx="120" ry="120" style="--d:-1.5s" />
+                <ellipse class="lon" cx="0" cy="0" rx="120" ry="120" style="--d:-3.0s" />
+                <ellipse class="lon" cx="0" cy="0" rx="120" ry="120" style="--d:-4.5s" />
+                <ellipse class="lon" cx="0" cy="0" rx="120" ry="120" style="--d:-6.0s" />
+                <ellipse class="lon" cx="0" cy="0" rx="120" ry="120" style="--d:-7.5s" />
+            </g>
+            <path class="arc a1" d="M-62,-38 Q-10,-110 52,-22" />
+            <path class="arc a2" d="M-62,-38 Q-90,30 -30,62" />
+            <path class="arc a3 plan" d="M-62,-38 Q30,-40 78,30" />
+            <path class="arc a4 mix" d="M-62,-38 Q-30,-90 10,-78" />
+            <circle class="pt home" cx="-62" cy="-38" r="5" />
+            <circle class="pt" cx="52" cy="-22" r="3.5" />
+            <circle class="pt" cx="-30" cy="62" r="3.5" />
+            <circle class="pt plan" cx="78" cy="30" r="3.5" />
+            <circle class="pt mix" cx="10" cy="-78" r="3.5" />
+          </svg>
+          <div class="legend mono">
+            <span><i class="lg-done"></i>gerçekleşen</span>
+            <span><i class="lg-plan"></i>planlanan</span>
+            <span><i class="lg-mix"></i>karma</span>
+          </div>
+          <div class="gantt">
+            <div><span class="mono">Hafta 45</span><b style="--l:5%;--w:40%"></b></div>
+            <div><span class="mono">Hafta 46</span><b class="plan" style="--l:30%;--w:45%"></b></div>
+            <div><span class="mono">Hafta 47</span><b class="mix" style="--l:55%;--w:35%"></b></div>
           </div>
         </div>
       </article>

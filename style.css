@@ -260,6 +260,35 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
 .win-chart span { flex: 1; height: var(--h); border-radius: 4px 4px 0 0; background: linear-gradient(180deg, var(--accent), rgba(129,140,248,.4)); opacity: .75; }
 .win-cap { margin-top: 8px; text-align: center; font-size: 10.5px; }
 
+/* --- Lojistik dashboard küresi --- */
+.feature.flip .feature-text { order: 2; }
+.feature.flip .globe-wrap { order: 1; }
+.globe-wrap { justify-self: center; width: 100%; max-width: 340px; display: flex; flex-direction: column; align-items: center; gap: 14px; }
+.globe { width: 100%; max-width: 300px; overflow: visible; }
+.globe .halo { fill: none; stroke: rgba(129,140,248,.12); stroke-width: 18; filter: blur(6px); }
+.grid-lines ellipse, .grid-lines line { fill: none; stroke: rgba(148,163,184,.14); stroke-width: 1; }
+.grid-lines .lon { animation: spin 9s linear infinite; animation-delay: var(--d); transform-box: fill-box; transform-origin: center; }
+@keyframes spin {
+  0% { transform: scaleX(1); } 25% { transform: scaleX(0); } 50% { transform: scaleX(-1); }
+  75% { transform: scaleX(0); } 100% { transform: scaleX(1); }
+}
+.arc { fill: none; stroke: #5eead4; stroke-width: 1.6; stroke-dasharray: 4 5; animation: flow 3s linear infinite; }
+.arc.plan { stroke: #818cf8; }
+.arc.mix { stroke: #fbbf24; }
+@keyframes flow { to { stroke-dashoffset: -36; } }
+.pt { fill: #5eead4; }
+.pt.plan { fill: #818cf8; }
+.pt.mix { fill: #fbbf24; }
+.pt.home { fill: #fff; stroke: #5eead4; stroke-width: 3; }
+.legend { display: flex; gap: 14px; font-size: 11px; color: var(--muted); }
+.legend i { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; }
+.lg-done { background: #5eead4; } .lg-plan { background: #818cf8; } .lg-mix { background: #fbbf24; }
+.gantt { width: 100%; display: grid; gap: 8px; padding: 12px 14px; border: 1px solid var(--border); border-radius: 12px; background: var(--bg-2); }
+.gantt div { display: grid; grid-template-columns: 70px 1fr; align-items: center; gap: 10px; }
+.gantt span { font-size: 10.5px; color: var(--muted); }
+.gantt b { display: block; height: 8px; margin-left: var(--l); width: var(--w); border-radius: 4px; background: #5eead4; opacity: .8; }
+.gantt b.plan { background: #818cf8; } .gantt b.mix { background: #fbbf24; }
+
 /* --- Otomasyonlar --- */
 .filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
 .filter {
@@ -347,6 +376,8 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
 @media (max-width: 760px) {
   .nav nav a:not(.nav-cta) { display: none; }
   .feature { grid-template-columns: 1fr; padding: 28px; }
+  .feature.flip .feature-text { order: 1; }
+  .feature.flip .globe-wrap { order: 2; }
   .gallery { width: 100%; }
   .gallery-main .gal-arrow { display: none; }
   .gallery-track { width: 100%; gap: 12px; padding: 0 4px; }
