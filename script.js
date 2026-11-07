@@ -145,6 +145,39 @@ document.querySelectorAll(".gallery").forEach((g) => {
   });
 });
 
+// Tıklanabilir kartlar → detay penceresi
+(() => {
+  const modal = document.getElementById("modal");
+  if (!modal) return;
+  const head = modal.querySelector(".modal-head"), body = modal.querySelector(".modal-body");
+  let lastCard = null;
+  const open = (card) => {
+    lastCard = card;
+    head.innerHTML = card.querySelector(".icon").outerHTML + `<h3>${card.querySelector("h3").textContent}</h3>`;
+    body.innerHTML = card.querySelector(".auto-detail").innerHTML + card.querySelector(".chips").outerHTML;
+    modal.hidden = false; document.body.style.overflow = "hidden";
+    modal.querySelector(".lb-close").focus();
+  };
+  const close = () => { modal.hidden = true; document.body.style.overflow = ""; lastCard && lastCard.focus(); };
+  document.querySelectorAll(".auto.clickable").forEach((card) => {
+    card.addEventListener("click", () => open(card));
+    card.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(card); } });
+  });
+  modal.querySelector(".lb-close").addEventListener("click", close);
+  modal.addEventListener("click", (e) => { if (e.target === modal) close(); });
+  addEventListener("keydown", (e) => { if (e.key === "Escape" && !modal.hidden) close(); });
+})();
+
+// Kartı olmayan filtre butonlarını gizle
+document.querySelectorAll(".filters").forEach((group) => {
+  const target = document.querySelector(group.dataset.target);
+  if (!target) return;
+  group.querySelectorAll(".filter").forEach((btn) => {
+    const f = btn.dataset.filter;
+    if (f !== "all" && !target.querySelector(`[data-cat="${f}"]`)) btn.hidden = true;
+  });
+});
+
 // Kaydırınca yumuşakça beliren kartlar
 const revealEls = document.querySelectorAll(".section-head, .card");
 revealEls.forEach((el) => el.classList.add("reveal"));

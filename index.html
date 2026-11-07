@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=6" />
+  <link rel="stylesheet" href="style.css?v=7" />
 </head>
 <body>
   <div class="bg-grid" aria-hidden="true"></div>
@@ -341,52 +341,36 @@
       </div>
 
       <div class="grid" id="auto-grid">
-        <article class="card auto" data-cat="rapor">
-          <div class="auto-top"><span class="icon">📊</span><span class="status mono">● aktif</span></div>
-          <h3>Otomatik Haftalık Rapor</h3>
-          <p>Verileri toplayıp her pazartesi yöneticilere hazır rapor gönderir.</p>
-          <p class="impact mono">↓ Haftada ~4 saat tasarruf</p>
-          <div class="chips"><span>Python</span><span>Excel</span></div>
-        </article>
-
-        <article class="card auto" data-cat="veri">
-          <div class="auto-top"><span class="icon">🔄</span><span class="status mono">● aktif</span></div>
-          <h3>Veri Senkronizasyonu</h3>
-          <p>Farklı sistemlerdeki kayıtları eşleştirir ve tutarsızlıkları işaretler.</p>
-          <p class="impact mono">↓ Hata oranı %90 azaldı</p>
-          <div class="chips"><span>SQL</span><span>API</span></div>
-        </article>
-
-        <article class="card auto" data-cat="bildirim">
-          <div class="auto-top"><span class="icon">🔔</span><span class="status mono">● aktif</span></div>
-          <h3>Akıllı Hatırlatıcı</h3>
-          <p>Yaklaşan son tarihleri takip eder, ilgili kişilere e-posta / mesaj atar.</p>
-          <p class="impact mono">↓ Kaçan termin: 0</p>
-          <div class="chips"><span>Power Automate</span></div>
-        </article>
-
-        <article class="card auto" data-cat="veri">
-          <div class="auto-top"><span class="icon">📄</span><span class="status mono">● aktif</span></div>
-          <h3>Belge İşleme</h3>
-          <p>Gelen PDF / Excel dosyalarından veriyi okuyup sisteme otomatik girer.</p>
-          <p class="impact mono">↓ Manuel giriş ortadan kalktı</p>
-          <div class="chips"><span>Python</span><span>OCR</span></div>
-        </article>
-
-        <article class="card auto" data-cat="rapor">
-          <div class="auto-top"><span class="icon">📈</span><span class="status mono">● aktif</span></div>
-          <h3>Canlı Gösterge Paneli</h3>
-          <p>Ekibin temel metriklerini tek ekranda, anlık olarak gösterir.</p>
-          <p class="impact mono">↓ Günlük toplantı süresi kısaldı</p>
-          <div class="chips"><span>Power BI</span></div>
-        </article>
-
-        <article class="card auto" data-cat="bildirim">
-          <div class="auto-top"><span class="icon">🤖</span><span class="status mono">● aktif</span></div>
-          <h3>Onay Akışı Botu</h3>
-          <p>Talepleri doğru kişiye yönlendirir, onay durumunu takip eder.</p>
-          <p class="impact mono">↓ Onay süresi 3 günden 3 saate</p>
-          <div class="chips"><span>Teams</span><span>Webhook</span></div>
+        <!--
+          YENİ KART EKLEMEK İÇİN: aşağıdaki <article> bloğunu kopyalayın.
+          data-cat: rapor | veri | bildirim  (filtre butonlarıyla eşleşir)
+          .auto-detail içindeki kısım yalnızca karta tıklanınca açılan pencerede görünür.
+        -->
+        <article class="card auto clickable" data-cat="veri" tabindex="0" role="button" aria-haspopup="dialog">
+          <div class="auto-top"><span class="icon">🦖</span><span class="status mono">● aktif</span></div>
+          <h3>Antrepo Canavarı</h3>
+          <p>Antrepo beyannamesi maillerini okuyup SAP'ye tek tuşla aktaran iki aşamalı otomasyon.</p>
+          <p class="impact mono">↓ Günde ~100 mailin elle girişi bitti</p>
+          <div class="chips"><span>Excel VBA</span><span>Outlook</span><span>PDF</span><span>SAP GUI</span></div>
+          <span class="open-hint mono">detaylar →</span>
+          <div class="auto-detail" hidden>
+            <p class="mono small app-sub">Veri İşleme · Aktif · Ekip ortak kullanıyor</p>
+            <p>
+              Antrepo beyannamesi bildirim maillerini işleyip SAP'ye aktaran iki aşamalı bir otomasyon.
+            </p>
+            <h4>1. aşama — Outlook</h4>
+            <p>
+              Seçilen tarih aralığındaki ilgili mailleri bütün klasörlerde tarar. Ekteki PDF'ten referans numarasını,
+              beyanname numarasını ve tescil tarihini okur, sonra hepsini temiz bir listeye yazar. Aynı beyanname
+              için gelen mükerrer mailleri tek satırda birleştirir.
+            </p>
+            <h4>2. aşama — SAP</h4>
+            <p>
+              Bu liste, SAP'nin bulunduğu kapalı ağdaki bilgisayarda tek tuşla SAP'ye girilir.
+            </p>
+            <h4>Kazanım</h4>
+            <p>Günde 100'e yakın maili tek tek açıp SAP'ye elle girme işi ortadan kalktı.</p>
+          </div>
         </article>
       </div>
     </section>
@@ -505,6 +489,14 @@
     </section>
   </main>
 
+  <div class="modal" id="modal" hidden role="dialog" aria-modal="true">
+    <div class="modal-box card">
+      <button class="lb-close" aria-label="Kapat">✕</button>
+      <div class="modal-head"></div>
+      <div class="modal-body"></div>
+    </div>
+  </div>
+
   <div class="lightbox" id="lightbox" hidden>
     <button class="lb-close" aria-label="Kapat">✕</button>
     <button class="gal-arrow lb-prev" aria-label="Önceki">‹</button>
@@ -517,6 +509,6 @@
   </footer>
 
   <script src="posts.js?v=3"></script>
-  <script src="script.js?v=4"></script>
+  <script src="script.js?v=7"></script>
 </body>
 </html>
