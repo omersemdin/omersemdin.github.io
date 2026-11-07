@@ -440,3 +440,7 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; }
 }
+
+/* Otomasyon kartları: 2 sütun (4 kart 2×2 dursun) */
+#auto-grid { grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); }
+@media (max-width: 760px) { #auto-grid { grid-template-columns: 1fr; } }
