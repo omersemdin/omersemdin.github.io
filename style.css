@@ -215,6 +215,51 @@ main { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
   background: var(--card); border: 1px solid var(--border); color: var(--text); font-size: 16px; cursor: pointer;
 }
 
+/* --- Öne çıkan otomasyon (EXbot) --- */
+.exbot { margin-bottom: 48px; }
+.emoji-icon { display: grid; place-items: center; font-size: 28px; background: rgba(255,255,255,.04); }
+.exbot-sub { color: var(--text); font-size: 1rem; margin: 2px 0 2px; }
+.exbot .app-title h3 { letter-spacing: 0; }
+.mini-stats { display: flex; flex-wrap: wrap; gap: 28px; margin: 22px 0 6px; }
+.mini-stats dt { font-size: 1.4rem; color: var(--accent); }
+.mini-stats dd { font-size: 12.5px; color: var(--muted); }
+.more { margin-top: 16px; }
+.more summary {
+  cursor: pointer; list-style: none; display: inline-flex; gap: 6px; align-items: center;
+  font-size: 14px; color: var(--text); padding: 6px 14px;
+  border: 1px solid var(--border); border-radius: 999px; transition: border-color .2s;
+}
+.more summary::-webkit-details-marker { display: none; }
+.more summary::before { content: "+"; color: var(--accent); font-family: "JetBrains Mono", monospace; }
+.more[open] summary::before { content: "−"; }
+.more summary:hover { border-color: var(--border-hover); }
+.more .checks { font-size: 14.5px; color: var(--muted); }
+.sub-head { font-size: 1.1rem; margin-bottom: 16px; color: var(--muted); font-weight: 500; }
+
+.win {
+  justify-self: center; width: 100%; max-width: 380px;
+  border-radius: 14px; overflow: hidden; border: 1px solid var(--border);
+  background: var(--bg-2); box-shadow: 0 30px 80px rgba(94,234,212,.08);
+}
+.win-bar { display: flex; align-items: center; gap: 6px; padding: 10px 14px; background: rgba(255,255,255,.03); border-bottom: 1px solid var(--border); }
+.win-bar i { width: 10px; height: 10px; border-radius: 50%; background: rgba(148,163,184,.25); }
+.win-bar i:first-child { background: #22c55e88; }
+.win-bar span { margin-left: 8px; font-size: 11px; color: var(--muted); }
+.win-body { padding: 14px; }
+.win-row {
+  display: grid; grid-template-columns: 72px 1fr auto; gap: 10px; align-items: center;
+  padding: 8px 6px; font-size: 12.5px; border-bottom: 1px solid rgba(148,163,184,.08);
+}
+.win-row.head { font-size: 10.5px; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; }
+.win-row .mono { font-size: 11px; color: var(--muted); }
+.pill { font-size: 10.5px; padding: 2px 8px; border-radius: 999px; font-family: "JetBrains Mono", monospace; }
+.pill.ok { color: #5eead4; background: rgba(94,234,212,.1); }
+.pill.run { color: #a5b4fc; background: rgba(129,140,248,.12); }
+.pill.warn { color: #fbbf24; background: rgba(251,191,36,.1); }
+.win-chart { display: flex; align-items: flex-end; gap: 10px; height: 80px; margin-top: 16px; padding: 0 6px; }
+.win-chart span { flex: 1; height: var(--h); border-radius: 4px 4px 0 0; background: linear-gradient(180deg, var(--accent), rgba(129,140,248,.4)); opacity: .75; }
+.win-cap { margin-top: 8px; text-align: center; font-size: 10.5px; }
+
 /* --- Otomasyonlar --- */
 .filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
 .filter {

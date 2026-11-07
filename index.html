@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=3" />
+  <link rel="stylesheet" href="style.css?v=4" />
 </head>
 <body>
   <div class="bg-grid" aria-hidden="true"></div>
@@ -119,6 +119,72 @@
         <h2>İş yerinde aktif kullanılan otomasyonlar</h2>
         <p class="muted">Her biri gerçek bir iş akışında, her gün çalışıyor.</p>
       </div>
+
+      <article class="card feature exbot">
+        <div class="feature-text">
+          <div class="app-title">
+            <span class="app-icon emoji-icon">📦</span>
+            <div>
+              <h3>EXbot</h3>
+              <p class="exbot-sub">İhracat Sevkiyat Asistanı</p>
+              <p class="mono small app-sub">Masaüstü otomasyon · Excel / Windows</p>
+            </div>
+          </div>
+          <p>
+            İhracat sevkiyat sürecini baştan sona yöneten, Excel tabanlı bir asistan. İhracat formunu okur;
+            sigorta, GTİP ve navlun yazışmalarını hazırlar; nakliye ihalesini yürütür, teklifleri toplar;
+            SAP girişini scriptle yapar ve satın alma raporunu Word'de kendisi yazar.
+          </p>
+
+          <dl class="mini-stats">
+            <div><dt class="mono">5</dt><dd>kişi her gün kullanıyor</dd></div>
+            <div><dt class="mono">~150</dt><dd>form / ay</dd></div>
+            <div><dt class="mono">1 sa → dk</dt><dd>ihale takibi süresi</dd></div>
+          </dl>
+
+          <details class="more">
+            <summary>Tüm özellikler <span class="mono">(8)</span></summary>
+            <ul class="checks">
+              <li>PDF ihracat formunu okuyup alanları kendiliğinden doldurma (çoklu form desteği)</li>
+              <li>Nakliye ihalesi yönetimi: teklif maillerini Outlook'tan toplama, otomatik yanıtları ayıklama, arşivleme</li>
+              <li>SAP GUI script üretimi (çoklu döviz desteğiyle)</li>
+              <li>Satın alma raporunu Word'de oluşturma (standart ve fuar sevki raporu)</li>
+              <li>Tescil, konşimento ve teşvik evrakı takibi</li>
+              <li>Nakliyeci karnesi ve performans analizi (ülke, sevk tipi ve Incoterms kırılımlarıyla)</li>
+              <li>"İşlerim" sayfası: kişinin eksik işlerini tek ekranda gösterir</li>
+              <li>Ekip verisi paylaşımı, aylık özet raporu, tek tıkla / otomatik güncelleme ve hata bildirimi</li>
+            </ul>
+          </details>
+
+          <div class="app-notes">
+            <div><span>⚡</span> Ek kurulum gerektirmez</div>
+            <div><span>👥</span> Ekipçe kullanılıyor</div>
+            <div><span>⏱️</span> Bir ihale takibi 1 saatten birkaç dakikaya indi</div>
+          </div>
+          <div class="chips">
+            <span>Excel VBA</span><span>SAP GUI Scripting</span><span>Outlook</span><span>Word</span><span>UserForms</span>
+          </div>
+        </div>
+
+        <div class="win" aria-hidden="true">
+          <div class="win-bar"><i></i><i></i><i></i><span class="mono">EXbot.xlsm — İşlerim</span></div>
+          <div class="win-body">
+            <div class="win-row head mono"><span>Sevkiyat</span><span>Adım</span><span>Durum</span></div>
+            <div class="win-row"><span class="mono">EX-2611</span><span>Navlun ihalesi</span><span class="pill ok">3 teklif</span></div>
+            <div class="win-row"><span class="mono">EX-2612</span><span>SAP girişi</span><span class="pill run">script hazır</span></div>
+            <div class="win-row"><span class="mono">EX-2613</span><span>Sigorta maili</span><span class="pill ok">gönderildi</span></div>
+            <div class="win-row"><span class="mono">EX-2614</span><span>Konşimento</span><span class="pill warn">bekleniyor</span></div>
+            <div class="win-row"><span class="mono">EX-2615</span><span>Satın alma raporu</span><span class="pill ok">Word ✓</span></div>
+            <div class="win-chart">
+              <span style="--h:55%"></span><span style="--h:80%"></span><span style="--h:45%"></span>
+              <span style="--h:92%"></span><span style="--h:68%"></span><span style="--h:75%"></span>
+            </div>
+            <p class="mono small muted win-cap">Nakliyeci karnesi · Incoterms kırılımı</p>
+          </div>
+        </div>
+      </article>
+
+      <h3 class="sub-head">Diğer otomasyonlar</h3>
 
       <div class="filters" data-target="#auto-grid">
         <button class="filter active" data-filter="all">Tümü</button>
@@ -304,6 +370,6 @@
   </footer>
 
   <script src="posts.js?v=3"></script>
-  <script src="script.js?v=3"></script>
+  <script src="script.js?v=4"></script>
 </body>
 </html>
