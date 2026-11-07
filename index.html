@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ömer Semdin — Portfolyo</title>
+  <meta name="description" content="Ömer Semdin — mobil uygulama ve iş süreçleri otomasyonu projeleri." />
+  <meta name="theme-color" content="#0a0f1c" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a href="#top" class="logo"><span class="logo-mark">ÖS</span><span class="logo-text">omer.semdin</span></a>
+    <nav>
+      <a href="#app">Uygulama</a>
+      <a href="#automations">Otomasyonlar</a>
+      <a href="#skills">Yetenekler</a>
+      <a href="#contact" class="nav-cta">İletişim</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <p class="eyebrow mono"><span class="pulse"></span> şu an: yeni projeler üzerinde çalışıyor</p>
+      <h1>Merhaba, ben <span class="grad">Ömer Semdin</span>.</h1>
+      <p class="lead">
+        Tekrarlayan işleri otomatiğe bağlayan, günlük hayatı kolaylaştıran
+        <strong>mobil uygulamalar</strong> ve <strong>iş süreci otomasyonları</strong> geliştiriyorum.
+      </p>
+      <div class="hero-actions">
+        <a href="#automations" class="btn btn-primary">Projeleri incele</a>
+        <a href="#contact" class="btn btn-ghost">Bana ulaş</a>
+      </div>
+      <dl class="stats">
+        <div><dt class="mono" data-count="1">0</dt><dd>Mobil uygulama</dd></div>
+        <div><dt class="mono" data-count="10" data-suffix="+">0</dt><dd>Aktif otomasyon</dd></div>
+        <div><dt class="mono" data-count="100" data-suffix="+">0</dt><dd>Saat / ay kazanç</dd></div>
+      </dl>
+    </section>
+
+    <!-- MOBİL UYGULAMA -->
+    <section id="app" class="section">
+      <div class="section-head">
+        <span class="mono tag">01 / mobil uygulama</span>
+        <h2>Öne çıkan proje</h2>
+      </div>
+      <article class="feature card">
+        <div class="feature-text">
+          <h3>Uygulama Adı</h3>
+          <p>
+            Uygulamanın ne işe yaradığını 2–3 cümleyle anlatın. Hangi problemi çözüyor,
+            kimler kullanıyor, kullanıcıya ne kazandırıyor?
+          </p>
+          <ul class="checks">
+            <li>Öne çıkan özellik #1</li>
+            <li>Öne çıkan özellik #2</li>
+            <li>Öne çıkan özellik #3</li>
+          </ul>
+          <div class="chips">
+            <span>Flutter</span><span>Firebase</span><span>REST API</span>
+          </div>
+          <div class="hero-actions">
+            <a href="#" class="btn btn-primary">Google Play</a>
+            <a href="#" class="btn btn-ghost">App Store</a>
+          </div>
+        </div>
+        <div class="phone" aria-hidden="true">
+          <div class="phone-screen">
+            <div class="ph-bar"></div>
+            <div class="ph-card"></div>
+            <div class="ph-row"><span></span><span></span></div>
+            <div class="ph-card small"></div>
+            <div class="ph-card small"></div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- OTOMASYONLAR -->
+    <section id="automations" class="section">
+      <div class="section-head">
+        <span class="mono tag">02 / otomasyonlar</span>
+        <h2>İş yerinde aktif kullanılan otomasyonlar</h2>
+        <p class="muted">Her biri gerçek bir iş akışında, her gün çalışıyor.</p>
+      </div>
+
+      <div class="filters" role="tablist">
+        <button class="filter active" data-filter="all">Tümü</button>
+        <button class="filter" data-filter="rapor">Raporlama</button>
+        <button class="filter" data-filter="veri">Veri İşleme</button>
+        <button class="filter" data-filter="bildirim">Bildirim</button>
+      </div>
+
+      <div class="grid">
+        <article class="card auto" data-cat="rapor">
+          <div class="auto-top"><span class="icon">📊</span><span class="status mono">● aktif</span></div>
+          <h3>Otomatik Haftalık Rapor</h3>
+          <p>Verileri toplayıp her pazartesi yöneticilere hazır rapor gönderir.</p>
+          <p class="impact mono">↓ Haftada ~4 saat tasarruf</p>
+          <div class="chips"><span>Python</span><span>Excel</span></div>
+        </article>
+
+        <article class="card auto" data-cat="veri">
+          <div class="auto-top"><span class="icon">🔄</span><span class="status mono">● aktif</span></div>
+          <h3>Veri Senkronizasyonu</h3>
+          <p>Farklı sistemlerdeki kayıtları eşleştirir ve tutarsızlıkları işaretler.</p>
+          <p class="impact mono">↓ Hata oranı %90 azaldı</p>
+          <div class="chips"><span>SQL</span><span>API</span></div>
+        </article>
+
+        <article class="card auto" data-cat="bildirim">
+          <div class="auto-top"><span class="icon">🔔</span><span class="status mono">● aktif</span></div>
+          <h3>Akıllı Hatırlatıcı</h3>
+          <p>Yaklaşan son tarihleri takip eder, ilgili kişilere e-posta / mesaj atar.</p>
+          <p class="impact mono">↓ Kaçan termin: 0</p>
+          <div class="chips"><span>Power Automate</span></div>
+        </article>
+
+        <article class="card auto" data-cat="veri">
+          <div class="auto-top"><span class="icon">📄</span><span class="status mono">● aktif</span></div>
+          <h3>Belge İşleme</h3>
+          <p>Gelen PDF / Excel dosyalarından veriyi okuyup sisteme otomatik girer.</p>
+          <p class="impact mono">↓ Manuel giriş ortadan kalktı</p>
+          <div class="chips"><span>Python</span><span>OCR</span></div>
+        </article>
+
+        <article class="card auto" data-cat="rapor">
+          <div class="auto-top"><span class="icon">📈</span><span class="status mono">● aktif</span></div>
+          <h3>Canlı Gösterge Paneli</h3>
+          <p>Ekibin temel metriklerini tek ekranda, anlık olarak gösterir.</p>
+          <p class="impact mono">↓ Günlük toplantı süresi kısaldı</p>
+          <div class="chips"><span>Power BI</span></div>
+        </article>
+
+        <article class="card auto" data-cat="bildirim">
+          <div class="auto-top"><span class="icon">🤖</span><span class="status mono">● aktif</span></div>
+          <h3>Onay Akışı Botu</h3>
+          <p>Talepleri doğru kişiye yönlendirir, onay durumunu takip eder.</p>
+          <p class="impact mono">↓ Onay süresi 3 günden 3 saate</p>
+          <div class="chips"><span>Teams</span><span>Webhook</span></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- YETENEKLER -->
+    <section id="skills" class="section">
+      <div class="section-head">
+        <span class="mono tag">03 / yetenekler</span>
+        <h2>Kullandığım araçlar</h2>
+      </div>
+      <div class="skills">
+        <div class="card skill-group">
+          <h3>Mobil</h3>
+          <div class="chips"><span>Flutter</span><span>Dart</span><span>Firebase</span></div>
+        </div>
+        <div class="card skill-group">
+          <h3>Otomasyon</h3>
+          <div class="chips"><span>Python</span><span>Power Automate</span><span>VBA</span></div>
+        </div>
+        <div class="card skill-group">
+          <h3>Veri</h3>
+          <div class="chips"><span>SQL</span><span>Excel</span><span>Power BI</span></div>
+        </div>
+        <div class="card skill-group">
+          <h3>Diğer</h3>
+          <div class="chips"><span>Git</span><span>REST API</span><span>Linux</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- İLETİŞİM -->
+    <section id="contact" class="section contact">
+      <div class="card contact-card">
+        <span class="mono tag">04 / iletişim</span>
+        <h2>Birlikte bir şey otomatiğe bağlayalım.</h2>
+        <p class="muted">Bir fikriniz ya da tekrar eden bir işiniz mi var? Yazın, konuşalım.</p>
+        <div class="hero-actions center">
+          <a href="mailto:ornek@eposta.com" class="btn btn-primary">E-posta gönder</a>
+          <a href="https://www.linkedin.com/" class="btn btn-ghost" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/omersemdin" class="btn btn-ghost" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer mono">
+    © <span id="year"></span> Ömer Semdin · GitHub Pages ile yayında
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
