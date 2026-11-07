@@ -78,24 +78,71 @@ document.querySelectorAll(".filters").forEach((group) => {
   });
 });
 
-// Uygulama ekran görüntüsü galerisi
+// Uygulama ekran görüntüsü galerisi (kaydırmalı şerit + büyük görüntü)
 document.querySelectorAll(".gallery").forEach((g) => {
-  const imgs = g.querySelectorAll(".gallery-frame img");
+  const track = g.querySelector(".gallery-track");
+  const imgs = [...track.querySelectorAll("img")];
   const dots = g.querySelectorAll(".gallery-dots button");
-  let i = 0, timer;
-  const show = (n) => {
-    i = (n + imgs.length) % imgs.length;
-    imgs.forEach((im, k) => im.classList.toggle("active", k === i));
+  const prev = g.querySelector(".gal-arrow.prev"), next = g.querySelector(".gal-arrow.next");
+
+  const current = () => {
+    const mid = track.scrollLeft + track.clientWidth / 2;
+    let best = 0, dist = Infinity;
+    imgs.forEach((im, k) => {
+      const d = Math.abs(im.offsetLeft - track.offsetLeft + im.clientWidth / 2 - mid);
+      if (d < dist) { dist = d; best = k; }
+    });
+    return best;
+  };
+  const go = (k) => {
+    k = Math.max(0, Math.min(imgs.length - 1, k));
+    const im = imgs[k];
+    track.scrollTo({ left: im.offsetLeft - track.offsetLeft - (track.clientWidth - im.clientWidth) / 2 });
+  };
+  const update = () => {
+    const i = current();
     dots.forEach((d, k) => d.classList.toggle("active", k === i));
+    if (prev) prev.disabled = i === 0;
+    if (next) next.disabled = i === imgs.length - 1;
   };
-  const start = () => {
-    if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    clearInterval(timer);
-    timer = setInterval(() => show(i + 1), 3500);
-  };
-  dots.forEach((d, k) => d.addEventListener("click", () => { show(k); start(); }));
-  g.querySelector(".gallery-frame").addEventListener("click", () => { show(i + 1); start(); });
-  start();
+  track.addEventListener("scroll", () => requestAnimationFrame(update), { passive: true });
+  prev && prev.addEventListener("click", () => go(current() - 1));
+  next && next.addEventListener("click", () => go(current() + 1));
+  dots.forEach((d, k) => d.addEventListener("click", () => go(k)));
+  track.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowRight") { e.preventDefault(); go(current() + 1); }
+    if (e.key === "ArrowLeft") { e.preventDefault(); go(current() - 1); }
+  });
+  update();
+
+  // Büyük görüntü
+  const lb = document.getElementById("lightbox");
+  if (!lb) return;
+  const lbImg = lb.querySelector("img");
+  let li = 0;
+  const show = (k) => { li = (k + imgs.length) % imgs.length; lbImg.src = imgs[li].src; lbImg.alt = imgs[li].alt; };
+  const close = () => { lb.hidden = true; document.body.style.overflow = ""; go(li); };
+  imgs.forEach((im, k) => im.addEventListener("click", () => {
+    show(k); lb.hidden = false; document.body.style.overflow = "hidden";
+  }));
+  lb.querySelector(".lb-prev").addEventListener("click", (e) => { e.stopPropagation(); show(li - 1); });
+  lb.querySelector(".lb-next").addEventListener("click", (e) => { e.stopPropagation(); show(li + 1); });
+  lb.querySelector(".lb-close").addEventListener("click", close);
+  lb.addEventListener("click", (e) => { if (e.target === lb) close(); });
+  addEventListener("keydown", (e) => {
+    if (lb.hidden) return;
+    if (e.key === "Escape") close();
+    if (e.key === "ArrowRight") show(li + 1);
+    if (e.key === "ArrowLeft") show(li - 1);
+  });
+  // Telefonda büyük görüntüde parmakla kaydırma
+  let sx = null;
+  lb.addEventListener("touchstart", (e) => (sx = e.touches[0].clientX), { passive: true });
+  lb.addEventListener("touchend", (e) => {
+    if (sx === null) return;
+    const dx = e.changedTouches[0].clientX - sx; sx = null;
+    if (Math.abs(dx) > 40) show(li + (dx < 0 ? 1 : -1));
+  });
 });
 
 // Kaydırınca yumuşakça beliren kartlar

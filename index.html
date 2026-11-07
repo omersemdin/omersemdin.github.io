@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=3" />
 </head>
 <body>
   <div class="bg-grid" aria-hidden="true"></div>
@@ -89,20 +89,25 @@
           </div>
         </div>
         <div class="gallery" aria-label="YOL uygulama ekran görüntüleri">
-          <div class="gallery-frame">
-            <img src="assets/yol/1_namaz_vakitleri.webp" alt="Namaz vakitleri ekranı" class="active" />
+          <div class="gallery-main">
+            <button class="gal-arrow prev" aria-label="Önceki">‹</button>
+            <div class="gallery-track" tabindex="0">
+            <img src="assets/yol/1_namaz_vakitleri.webp" alt="Namaz vakitleri ekranı" loading="lazy" />
             <img src="assets/yol/2_kible.webp" alt="Kıble ekranı" loading="lazy" />
             <img src="assets/yol/3_zikirmatik.webp" alt="Zikirmatik ekranı" loading="lazy" />
             <img src="assets/yol/4_topluluk.webp" alt="Topluluk ekranı" loading="lazy" />
             <img src="assets/yol/5_premium.webp" alt="Premium ekranı" loading="lazy" />
+            </div>
+            <button class="gal-arrow next" aria-label="Sonraki">›</button>
           </div>
           <div class="gallery-dots">
-            <button aria-label="Namaz vakitleri" class="active"></button>
+            <button aria-label="Namaz vakitleri"></button>
             <button aria-label="Kıble"></button>
             <button aria-label="Zikirmatik"></button>
             <button aria-label="Topluluk"></button>
             <button aria-label="Premium"></button>
           </div>
+          <p class="mono muted small gal-hint">← kaydır · büyütmek için dokun →</p>
         </div>
       </article>
     </section>
@@ -287,11 +292,18 @@
     </section>
   </main>
 
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lb-close" aria-label="Kapat">✕</button>
+    <button class="gal-arrow lb-prev" aria-label="Önceki">‹</button>
+    <img alt="" />
+    <button class="gal-arrow lb-next" aria-label="Sonraki">›</button>
+  </div>
+
   <footer class="footer mono">
     © <span id="year"></span> Ömer Buğra Şemdin · GitHub Pages ile yayında
   </footer>
 
-  <script src="posts.js"></script>
-  <script src="script.js"></script>
+  <script src="posts.js?v=3"></script>
+  <script src="script.js?v=3"></script>
 </body>
 </html>
