@@ -13,4 +13,4 @@
 
 ## Sık yapılanlar
 - **Yeni otomasyon / IoT projesi:** `index.html` içinde bir `<article class="card auto">` bloğunu kopyalayıp düzenleyin. `data-cat` değeri filtre butonlarıyla eşleşmeli.
-- **Yeni blog yazısı:** `posts.js` içindeki bir yazıyı kopyalayıp listenin en üstüne yapıştırın; `id`, `baslik`, `tarih`, `kategori` (`gezi` / `spor`) ve `icerik` alanlarını değiştirin.
+- **Yeni blog yazısı:** `posts.js` içindeki bir yazıyı kopyalayıp listenin en üstüne yapıştırın; `id`, `baslik`, `tarih`, `kategori` (`gezi` / `spor` / `oyun`) ve `icerik` alanlarını değiştirin.

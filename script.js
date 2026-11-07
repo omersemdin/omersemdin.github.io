@@ -5,7 +5,7 @@ document.querySelectorAll("#year").forEach((el) => (el.textContent = new Date().
 const nav = document.querySelector(".nav");
 addEventListener("scroll", () => nav.classList.toggle("scrolled", scrollY > 10), { passive: true });
 
-const CATS = { gezi: "🧭 Gezi", spor: "🏃 Spor" };
+const CATS = { gezi: "🧭 Gezi", spor: "🏟️ Spor", oyun: "🎮 Oyun" };
 const fmtDate = (d) =>
   new Date(d + "T00:00:00").toLocaleDateString("tr-TR", { day: "numeric", month: "long", year: "numeric" });
 
@@ -31,7 +31,7 @@ if (typeof POSTS !== "undefined") {
       <span class="icon">✍️</span>
       <div>
         <h3>İlk yazılar yolda</h3>
-        <p class="muted">Gezi notları ve spor deneyimleri çok yakında burada olacak.</p>
+        <p class="muted">Gezi notları, maç yorumları ve oyun incelemeleri çok yakında burada. İlki Ghost of Tsushima üzerine.</p>
       </div>
     </div>`;
   const allBtn = document.getElementById("all-posts-btn");

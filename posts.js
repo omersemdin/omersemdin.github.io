@@ -3,7 +3,7 @@
 // kendi yazınızı eklemek için birini kopyalayıp başındaki // işaretlerini silin ve POSTS listesinin içine koyun.
 // Yeni yazı eklemek için listenin EN ÜSTÜNE yeni bir { ... } bloğu ekleyin.
 // id: adres çubuğunda görünür (Türkçe karakter ve boşluk kullanmayın, tire kullanın)
-// kategori: "gezi" veya "spor"
+// kategori: "gezi", "spor" veya "oyun"
 // kapak: 2 renk (kartın arka plan geçişi) + emoji
 const POSTS = [
 ];
