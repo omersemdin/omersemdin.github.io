@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog — Ömer Buğra Şemdin</title>
+  <meta name="description" content="Ömer Buğra Şemdin — gezi ve spor yazıları." />
+  <meta name="theme-color" content="#0a0f1c" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a href="index.html" class="logo"><span class="logo-mark">ÖBŞ</span><span class="logo-text">omer.bugra.semdin</span></a>
+    <nav>
+      <a href="index.html#app">Uygulama</a>
+      <a href="index.html#automations">Otomasyonlar</a>
+      <a href="index.html#iot">IoT & DIY</a>
+      <a href="blog.html" class="active">Blog</a>
+      <a href="index.html#contact" class="nav-cta">İletişim</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- LİSTE GÖRÜNÜMÜ -->
+    <section id="list-view" class="section blog-page">
+      <div class="section-head">
+        <span class="mono tag">blog</span>
+        <h1 class="page-title">Gezi & Spor</h1>
+        <p class="muted">Gittiğim yerler, koştuğum yollar ve yolda öğrendiklerim.</p>
+      </div>
+      <div class="filters" data-target="#post-grid">
+        <button class="filter active" data-filter="all">Tümü</button>
+        <button class="filter" data-filter="gezi">🧭 Gezi</button>
+        <button class="filter" data-filter="spor">🏃 Spor</button>
+      </div>
+      <div class="grid" id="post-grid"></div>
+    </section>
+
+    <!-- YAZI GÖRÜNÜMÜ -->
+    <article id="post-view" class="section post" hidden>
+      <a href="#" class="back mono" id="back-link">← tüm yazılar</a>
+      <div class="post-cover" id="post-cover"></div>
+      <p class="mono muted small" id="post-meta"></p>
+      <h1 id="post-title"></h1>
+      <div class="post-body" id="post-body"></div>
+    </article>
+  </main>
+
+  <footer class="footer mono">
+    © <span id="year"></span> Ömer Buğra Şemdin · GitHub Pages ile yayında
+  </footer>
+
+  <script src="posts.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

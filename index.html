@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ömer Semdin — Portfolyo</title>
-  <meta name="description" content="Ömer Semdin — mobil uygulama ve iş süreçleri otomasyonu projeleri." />
+  <title>Ömer Buğra Şemdin — Portfolyo</title>
+  <meta name="description" content="Ömer Buğra Şemdin — mobil uygulama, iş süreci otomasyonları, IoT & DIY projeleri; gezi ve spor blogu." />
   <meta name="theme-color" content="#0a0f1c" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -17,31 +17,34 @@
   <div class="bg-glow" aria-hidden="true"></div>
 
   <header class="nav">
-    <a href="#top" class="logo"><span class="logo-mark">ÖS</span><span class="logo-text">omer.semdin</span></a>
+    <a href="index.html" class="logo"><span class="logo-mark">ÖBŞ</span><span class="logo-text">omer.bugra.semdin</span></a>
     <nav>
       <a href="#app">Uygulama</a>
       <a href="#automations">Otomasyonlar</a>
-      <a href="#skills">Yetenekler</a>
+      <a href="#iot">IoT & DIY</a>
+      <a href="blog.html">Blog</a>
       <a href="#contact" class="nav-cta">İletişim</a>
     </nav>
   </header>
 
   <main id="top">
-    <!-- HERO -->
+    <!-- GİRİŞ -->
     <section class="hero">
       <p class="eyebrow mono"><span class="pulse"></span> şu an: yeni projeler üzerinde çalışıyor</p>
-      <h1>Merhaba, ben <span class="grad">Ömer Semdin</span>.</h1>
+      <h1>Merhaba, ben <span class="grad">Ömer Buğra Şemdin</span>.</h1>
       <p class="lead">
-        Tekrarlayan işleri otomatiğe bağlayan, günlük hayatı kolaylaştıran
-        <strong>mobil uygulamalar</strong> ve <strong>iş süreci otomasyonları</strong> geliştiriyorum.
+        Tekrarlayan işleri otomatiğe bağlayan <strong>mobil uygulamalar</strong> ve
+        <strong>iş süreci otomasyonları</strong> geliştiriyorum. Boş zamanlarımda
+        <strong>IoT & DIY</strong> projeleriyle uğraşıyor, <strong>geziyor</strong> ve <strong>spor</strong> yapıyorum.
       </p>
       <div class="hero-actions">
         <a href="#automations" class="btn btn-primary">Projeleri incele</a>
-        <a href="#contact" class="btn btn-ghost">Bana ulaş</a>
+        <a href="blog.html" class="btn btn-ghost">Blogu oku</a>
       </div>
       <dl class="stats">
         <div><dt class="mono" data-count="1">0</dt><dd>Mobil uygulama</dd></div>
         <div><dt class="mono" data-count="10" data-suffix="+">0</dt><dd>Aktif otomasyon</dd></div>
+        <div><dt class="mono" data-count="5" data-suffix="+">0</dt><dd>IoT / DIY proje</dd></div>
         <div><dt class="mono" data-count="100" data-suffix="+">0</dt><dd>Saat / ay kazanç</dd></div>
       </dl>
     </section>
@@ -92,14 +95,14 @@
         <p class="muted">Her biri gerçek bir iş akışında, her gün çalışıyor.</p>
       </div>
 
-      <div class="filters" role="tablist">
+      <div class="filters" data-target="#auto-grid">
         <button class="filter active" data-filter="all">Tümü</button>
         <button class="filter" data-filter="rapor">Raporlama</button>
         <button class="filter" data-filter="veri">Veri İşleme</button>
         <button class="filter" data-filter="bildirim">Bildirim</button>
       </div>
 
-      <div class="grid">
+      <div class="grid" id="auto-grid">
         <article class="card auto" data-cat="rapor">
           <div class="auto-top"><span class="icon">📊</span><span class="status mono">● aktif</span></div>
           <h3>Otomatik Haftalık Rapor</h3>
@@ -150,10 +153,81 @@
       </div>
     </section>
 
+    <!-- IOT & DIY -->
+    <section id="iot" class="section">
+      <div class="section-head">
+        <span class="mono tag">03 / iot & diy</span>
+        <h2>Atölyeden projeler</h2>
+        <p class="muted">Lehim, sensörler ve biraz da kod — evde ve masada yaptığım şeyler.</p>
+      </div>
+
+      <div class="filters" data-target="#iot-grid">
+        <button class="filter active" data-filter="all">Tümü</button>
+        <button class="filter" data-filter="calisiyor">Çalışıyor</button>
+        <button class="filter" data-filter="prototip">Prototip</button>
+        <button class="filter" data-filter="fikir">Fikir aşamasında</button>
+      </div>
+
+      <div class="grid" id="iot-grid">
+        <article class="card auto iot" data-cat="calisiyor">
+          <div class="auto-top"><span class="icon">🌡️</span><span class="status mono">● çalışıyor</span></div>
+          <h3>Akıllı Ev Sensör Ağı</h3>
+          <p>Odalardaki sıcaklık ve nemi ölçüp telefona anlık grafik olarak gönderir.</p>
+          <p class="spec mono">ESP32 · DHT22 · MQTT</p>
+          <div class="chips"><span>Home Assistant</span><span>Grafana</span></div>
+        </article>
+
+        <article class="card auto iot" data-cat="calisiyor">
+          <div class="auto-top"><span class="icon">🪴</span><span class="status mono">● çalışıyor</span></div>
+          <h3>Otomatik Bitki Sulama</h3>
+          <p>Toprak nemi düşünce pompayı çalıştırır, su azalınca bildirim atar.</p>
+          <p class="spec mono">Arduino · nem sensörü · röle</p>
+          <div class="chips"><span>C++</span></div>
+        </article>
+
+        <article class="card auto iot" data-cat="prototip">
+          <div class="auto-top"><span class="icon">💡</span><span class="status mono warn">◐ prototip</span></div>
+          <h3>Ortam Işığı Kontrolcüsü</h3>
+          <p>Ekran rengine göre arka plan LED'lerini değiştiren masa aydınlatması.</p>
+          <p class="spec mono">WS2812B · ESP8266</p>
+          <div class="chips"><span>WLED</span><span>3D baskı kutu</span></div>
+        </article>
+
+        <article class="card auto iot" data-cat="prototip">
+          <div class="auto-top"><span class="icon">🚪</span><span class="status mono warn">◐ prototip</span></div>
+          <h3>Kapı / Posta Kutusu Bildirimi</h3>
+          <p>Kapı açıldığında veya posta geldiğinde telefona bildirim gönderir.</p>
+          <p class="spec mono">Reed switch · LoRa</p>
+          <div class="chips"><span>Telegram Bot</span></div>
+        </article>
+
+        <article class="card auto iot" data-cat="fikir">
+          <div class="auto-top"><span class="icon">🏃</span><span class="status mono idea">○ fikir</span></div>
+          <h3>Koşu Verisi Paneli</h3>
+          <p>Spor saatinden gelen verileri toplayıp kişisel bir antrenman panelinde gösterecek.</p>
+          <p class="spec mono">Raspberry Pi · API</p>
+          <div class="chips"><span>Python</span></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- BLOG -->
+    <section id="blog" class="section">
+      <div class="section-head row">
+        <div>
+          <span class="mono tag">04 / blog</span>
+          <h2>Gezi & Spor notları</h2>
+          <p class="muted">Ekran başından uzakta geçen zamanlardan.</p>
+        </div>
+        <a href="blog.html" class="btn btn-ghost">Tüm yazılar →</a>
+      </div>
+      <div class="grid" id="latest-posts"></div>
+    </section>
+
     <!-- YETENEKLER -->
     <section id="skills" class="section">
       <div class="section-head">
-        <span class="mono tag">03 / yetenekler</span>
+        <span class="mono tag">05 / yetenekler</span>
         <h2>Kullandığım araçlar</h2>
       </div>
       <div class="skills">
@@ -170,8 +244,8 @@
           <div class="chips"><span>SQL</span><span>Excel</span><span>Power BI</span></div>
         </div>
         <div class="card skill-group">
-          <h3>Diğer</h3>
-          <div class="chips"><span>Git</span><span>REST API</span><span>Linux</span></div>
+          <h3>Donanım</h3>
+          <div class="chips"><span>ESP32</span><span>Arduino</span><span>Raspberry Pi</span><span>MQTT</span></div>
         </div>
       </div>
     </section>
@@ -179,22 +253,25 @@
     <!-- İLETİŞİM -->
     <section id="contact" class="section contact">
       <div class="card contact-card">
-        <span class="mono tag">04 / iletişim</span>
+        <span class="mono tag">06 / iletişim</span>
         <h2>Birlikte bir şey otomatiğe bağlayalım.</h2>
-        <p class="muted">Bir fikriniz ya da tekrar eden bir işiniz mi var? Yazın, konuşalım.</p>
+        <p class="muted">Bir fikriniz, bir projeniz ya da bir rota öneriniz mi var? Yazın, konuşalım.</p>
         <div class="hero-actions center">
           <a href="mailto:ornek@eposta.com" class="btn btn-primary">E-posta gönder</a>
           <a href="https://www.linkedin.com/" class="btn btn-ghost" target="_blank" rel="noopener">LinkedIn</a>
           <a href="https://github.com/omersemdin" class="btn btn-ghost" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.instagram.com/" class="btn btn-ghost" target="_blank" rel="noopener">Instagram</a>
         </div>
+        <p class="mono muted small">ornek@eposta.com</p>
       </div>
     </section>
   </main>
 
   <footer class="footer mono">
-    © <span id="year"></span> Ömer Semdin · GitHub Pages ile yayında
+    © <span id="year"></span> Ömer Buğra Şemdin · GitHub Pages ile yayında
   </footer>
 
+  <script src="posts.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

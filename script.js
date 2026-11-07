@@ -1,18 +1,79 @@
 // Yıl
-document.getElementById("year").textContent = new Date().getFullYear();
+document.querySelectorAll("#year").forEach((el) => (el.textContent = new Date().getFullYear()));
 
 // Kaydırınca navigasyona çizgi ekle
 const nav = document.querySelector(".nav");
 addEventListener("scroll", () => nav.classList.toggle("scrolled", scrollY > 10), { passive: true });
 
-// Otomasyon filtreleri
-document.querySelectorAll(".filter").forEach((btn) => {
-  btn.addEventListener("click", () => {
-    document.querySelectorAll(".filter").forEach((b) => b.classList.remove("active"));
-    btn.classList.add("active");
-    const f = btn.dataset.filter;
-    document.querySelectorAll(".auto").forEach((card) => {
-      card.classList.toggle("hidden", f !== "all" && card.dataset.cat !== f);
+const CATS = { gezi: "🧭 Gezi", spor: "🏃 Spor" };
+const fmtDate = (d) =>
+  new Date(d + "T00:00:00").toLocaleDateString("tr-TR", { day: "numeric", month: "long", year: "numeric" });
+
+// Blog kartı HTML'i
+function postCard(p) {
+  return `
+    <a class="card auto post-card" data-cat="${p.kategori}" href="blog.html#${p.id}">
+      <div class="post-thumb" style="--c1:${p.kapak[0]};--c2:${p.kapak[1]}"><span>${p.emoji}</span></div>
+      <div class="auto-top"><span class="status mono">${CATS[p.kategori] || p.kategori}</span><span class="mono muted small">${fmtDate(p.tarih)}</span></div>
+      <h3>${p.baslik}</h3>
+      <p>${p.ozet}</p>
+      <p class="impact mono">devamını oku →</p>
+    </a>`;
+}
+
+if (typeof POSTS !== "undefined") {
+  const sorted = [...POSTS].sort((a, b) => b.tarih.localeCompare(a.tarih));
+
+  // Ana sayfa: son 3 yazı
+  const latest = document.getElementById("latest-posts");
+  if (latest) latest.innerHTML = sorted.slice(0, 3).map(postCard).join("");
+
+  // Blog sayfası: liste + tek yazı görünümü (#yazi-id)
+  const grid = document.getElementById("post-grid");
+  if (grid) {
+    grid.innerHTML = sorted.map(postCard).join("");
+    const listView = document.getElementById("list-view");
+    const postView = document.getElementById("post-view");
+    const route = () => {
+      const id = decodeURIComponent(location.hash.slice(1));
+      const p = POSTS.find((x) => x.id === id);
+      listView.hidden = !!p;
+      postView.hidden = !p;
+      if (p) {
+        document.getElementById("post-title").textContent = p.baslik;
+        document.getElementById("post-meta").textContent = `${CATS[p.kategori] || p.kategori} · ${fmtDate(p.tarih)}`;
+        document.getElementById("post-body").innerHTML = p.icerik;
+        const cover = document.getElementById("post-cover");
+        cover.style.setProperty("--c1", p.kapak[0]);
+        cover.style.setProperty("--c2", p.kapak[1]);
+        cover.innerHTML = `<span>${p.emoji}</span>`;
+        document.title = `${p.baslik} — Ömer Buğra Şemdin`;
+      } else {
+        document.title = "Blog — Ömer Buğra Şemdin";
+      }
+      scrollTo(0, 0);
+    };
+    document.getElementById("back-link").addEventListener("click", (e) => {
+      e.preventDefault();
+      history.pushState(null, "", location.pathname);
+      route();
+    });
+    addEventListener("hashchange", route);
+    route();
+  }
+}
+
+// Filtreler (her filtre grubu kendi listesini yönetir)
+document.querySelectorAll(".filters").forEach((group) => {
+  const target = document.querySelector(group.dataset.target);
+  group.querySelectorAll(".filter").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      group.querySelectorAll(".filter").forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+      const f = btn.dataset.filter;
+      target.querySelectorAll("[data-cat]").forEach((card) => {
+        card.classList.toggle("hidden", f !== "all" && card.dataset.cat !== f);
+      });
     });
   });
 });
