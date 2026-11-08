@@ -13,8 +13,46 @@ const POSTS = [
     kategori: "oyun",
     emoji: "⛩️",
     kapak: ["#b91c1c", "#1e1b4b"],
+    kapakGizle: true, // yazının başında kapak yerine animasyonlu zaman çizelgesi var
     ozet: "Atari kasetlerinden Dota 2'ye, oradan da beni yeniden hikâyeli oyunlara bağlayan Ghost of Tsushima'ya uzanan bir yolculuk.",
     icerik: `
+      <div class="story" data-story aria-label="Oyun yolculuğum: zaman çizelgesi">
+        <div class="story-petals" aria-hidden="true"><i class="petal" style="--x:45%;--d:3.32s;--t:6.2s;--s:0.73;--r:114deg"></i><i class="petal" style="--x:16%;--d:1.28s;--t:5.2s;--s:1.00;--r:-141deg"></i><i class="petal" style="--x:15%;--d:1.52s;--t:5.2s;--s:0.75;--r:57deg"></i><i class="petal" style="--x:11%;--d:2.89s;--t:5.4s;--s:0.83;--r:138deg"></i><i class="petal" style="--x:11%;--d:2.02s;--t:6.2s;--s:1.29;--r:-137deg"></i><i class="petal" style="--x:75%;--d:3.00s;--t:5.9s;--s:0.79;--r:-100deg"></i><i class="petal" style="--x:77%;--d:1.08s;--t:7.4s;--s:0.81;--r:137deg"></i><i class="petal" style="--x:77%;--d:2.24s;--t:6.1s;--s:1.03;--r:-128deg"></i><i class="petal" style="--x:76%;--d:0.21s;--t:5.6s;--s:1.11;--r:58deg"></i><i class="petal" style="--x:44%;--d:1.63s;--t:7.8s;--s:0.92;--r:-33deg"></i><i class="petal" style="--x:27%;--d:2.45s;--t:5.7s;--s:1.04;--r:108deg"></i><i class="petal" style="--x:67%;--d:3.06s;--t:7.2s;--s:0.87;--r:-123deg"></i><i class="petal" style="--x:19%;--d:1.79s;--t:5.5s;--s:0.91;--r:90deg"></i><i class="petal" style="--x:57%;--d:0.14s;--t:7.0s;--s:1.16;--r:133deg"></i></div>
+        <p class="story-tag mono">oyun yolculuğum</p>
+        <ol class="story-list">
+          <span class="story-line" aria-hidden="true"><span class="story-fill"></span></span>
+          <li class="story-node " style="--i:0">
+            <span class="sn-ico">🕹️</span>
+            <span class="sn-meta"><span class="sn-year mono">Çocukluk</span><span class="sn-txt">Sokakta futbol, evde Mert Abi ile Atari, annemle pişti</span></span>
+          </li>
+          <li class="story-node " style="--i:1">
+            <span class="sn-ico">💻</span>
+            <span class="sn-meta"><span class="sn-year mono">3. sınıf</span><span class="sn-txt">İlk bilgisayar ve beni en çok tatmin eden oyun: FIFA 06</span></span>
+          </li>
+          <li class="story-node " style="--i:2">
+            <span class="sn-ico">🎯</span>
+            <span class="sn-meta"><span class="sn-year mono">2010</span><span class="sn-txt">Point Blank, Barış Abi ve klan savaşları</span></span>
+          </li>
+          <li class="story-node " style="--i:3">
+            <span class="sn-ico">🛡️</span>
+            <span class="sn-meta"><span class="sn-year mono">2013</span><span class="sn-txt">Bir Dota 2 beta key'i… 13 yıl sürecek bir hikâye</span></span>
+          </li>
+          <li class="story-node dim" style="--i:4">
+            <span class="sn-ico">📉</span>
+            <span class="sn-meta"><span class="sn-year mono">Yıllar sonra</span><span class="sn-txt">Rekabetin tadı kaçmaya başlıyor</span></span>
+          </li>
+          <li class="story-node " style="--i:5">
+            <span class="sn-ico">🤠</span>
+            <span class="sn-meta"><span class="sn-year mono">Yeniden</span><span class="sn-txt">Red Dead Redemption 2 ve Hades ile hikâyeye dönüş</span></span>
+          </li>
+          <li class="story-node final" style="--i:6">
+            <span class="sn-ico">⛩️</span>
+            <span class="sn-meta"><span class="sn-year mono">Bugün</span><span class="sn-txt">Ghost of Tsushima</span><span class="sn-score mono">9/10</span></span>
+          </li>
+        </ol>
+        <button class="story-replay mono" type="button">↺ tekrar oynat</button>
+      </div>
+
       <p>Kendimi bildim bileli hep bir oyunun içinde olmuşumdur. Küçükken sokakta ve parkta abilerle futbol, evde Mert Abi ile Atari, annemle pişti, okulda basketbol… Bu süreç, yanlış hatırlamıyorsam 3. sınıfta kendime ait bir bilgisayarım olmasıyla farklı bir evrene adım atmamla devam etti.</p>
       <p>Aslında çok da farklı bir evren değildi, çünkü evde Atari'yi çok oynardık. Kaseti sürekli üfleyerek çalıştırmak, kaybetmeye bir türlü tenezzül edememek… Bunlar o zamanlardan kalma. Bilgisayar geldiğinde ise Atari'ye kıyasla daha güzel görüntüler ve çok daha fazla çeşitlilik beni içine iyice çekti.</p>
 

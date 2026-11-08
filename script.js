@@ -9,6 +9,20 @@ const CATS = { gezi: "🧭 Gezi", spor: "🏟️ Spor", oyun: "🎮 Oyun" };
 const fmtDate = (d) =>
   new Date(d + "T00:00:00").toLocaleDateString("tr-TR", { day: "numeric", month: "long", year: "numeric" });
 
+// Yazı içi animasyonlu zaman çizelgesi: görünür olunca oynar, "tekrar oynat" ile baştan başlar
+function initStories() {
+  document.querySelectorAll("[data-story]").forEach((st) => {
+    if (st.dataset.ready) return;
+    st.dataset.ready = "1";
+    const play = () => { st.classList.remove("play"); void st.offsetWidth; st.classList.add("play"); };
+    const io = new IntersectionObserver((es) => {
+      if (es[0].isIntersecting) { play(); io.disconnect(); }
+    }, { threshold: 0.3 });
+    io.observe(st);
+    st.querySelector(".story-replay").addEventListener("click", play);
+  });
+}
+
 // Blog kartı HTML'i
 function postCard(p) {
   return `
@@ -58,6 +72,8 @@ if (typeof POSTS !== "undefined") {
         cover.style.setProperty("--c1", p.kapak[0]);
         cover.style.setProperty("--c2", p.kapak[1]);
         cover.innerHTML = `<span>${p.emoji}</span>`;
+        cover.hidden = !!p.kapakGizle;
+        initStories();
         document.title = `${p.baslik} — Ömer Buğra Şemdin`;
       } else {
         document.title = "Blog — Ömer Buğra Şemdin";
