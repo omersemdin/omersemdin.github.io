@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=15" />
+  <link rel="stylesheet" href="style.css?v=16" />
 </head>
 <body>
   <div class="bg-grid" aria-hidden="true"></div>
@@ -20,6 +20,7 @@
     <a href="index.html" class="logo"><span class="logo-mark">ÖBŞ</span><span class="logo-text">omer.bugra.semdin</span></a>
     <nav>
       <a href="#app">Uygulama</a>
+      <a href="#derin-analiz">Derin Analiz</a>
       <a href="#automations">Otomasyonlar</a>
       <a href="#iot">IoT & DIY</a>
       <a href="blog.html">Blog</a>
@@ -110,10 +111,70 @@
       </article>
     </section>
 
+    <!-- GELİŞTİRİLİYOR -->
+    <section id="derin-analiz" class="section">
+      <div class="section-head">
+        <span class="mono tag">02 / geliştiriliyor</span>
+        <h2>Şu an üzerinde çalıştığım proje</h2>
+        <p class="muted">Maç izlerken çıkan bir ihtiyaçtan doğdu, ürüne dönüşmesi için geliştiriyorum.</p>
+      </div>
+
+      <article class="card feature exbot">
+        <div class="feature-text">
+          <div class="app-title">
+            <span class="app-icon emoji-icon">🎯</span>
+            <div>
+              <h3>Derin Analiz</h3>
+              <p class="exbot-sub">Oyuncu bazlı canlı kupon takibi</p>
+              <p class="mono small app-sub">Telegram botu · Python</p>
+            </div>
+          </div>
+          <p>
+            <span class="live-badge dev-badge mono">● geliştiriliyor · test aşamasında</span><br />
+            Canlı skor uygulamaları yalnızca gol bildirimi gönderiyor. Oysa kuponlarda "Frattesi 2+ isabetli şut"
+            gibi oyuncu bazlı bahisler giderek yaygınlaşıyor ve bunları takip etmek için maç boyunca istatistik
+            ekranını yenilemek gerekiyor. Derin Analiz, takip ettiğin oyuncu her şut attığında, kart gördüğünde ya
+            da kurtarış yaptığında anında bildirim gönderiyor ve bahsinin ne durumda olduğunu gösteriyor.
+          </p>
+
+          <details class="more">
+            <summary>Özellikler <span class="mono">(6)</span></summary>
+            <ul class="checks">
+              <li>Tek komutla takip: takım, oyuncu, istatistik ve hedef yazman yeterli</li>
+              <li>12 istatistik: şut, isabetli şut, gol, asist, kurtarış, faul, sarı kart, ofsayt ve daha fazlası</li>
+              <li>Her gelişmede ilerleme çubuklu bildirim, hedefe ulaşınca "tuttu" mesajı</li>
+              <li>Veri sağlayıcı istatistiği sonradan düzeltirse ayrıca haber veriyor</li>
+              <li>Oyuncu adında yazım hatalarını ve Türkçe karakterleri tolere eden eşleştirme</li>
+              <li>Aynı maçı takip eden herkes için tek veri isteği: binlerce kullanıcıya ölçeklenebilir</li>
+            </ul>
+          </details>
+
+          <div class="app-notes">
+            <div><span>🔔</span> Gol değil, oyuncu bildirimi</div>
+            <div><span>📡</span> Lisanslı canlı maç verisi</div>
+            <div><span>🤝</span> Canlı skor uygulamalarına entegre edilebilecek şekilde tasarlanıyor</div>
+          </div>
+          <div class="chips">
+            <span>Python</span><span>Telegram Bot API</span><span>REST API</span><span>SQLite</span><span>Docker</span>
+          </div>
+        </div>
+
+        <div class="chat-wrap" aria-hidden="true">
+          <div class="tg chat">
+            <div class="tg-head mono"><span class="tg-dot"></span>Derin Analiz · Telegram</div>
+            <div class="tg-msg me mono">/takip Lazio Frattesi isabetli 2</div>
+            <div class="tg-msg">✅ <b>Takip eklendi</b><br />Lazio - Napoli · Frattesi: 2+ isabetli şut</div>
+            <div class="tg-msg">🎯 Frattesi isabetli şut! <span class="muted">(34')</span><br /><span class="mono">1/2</span> 🟩⬜</div>
+            <div class="tg-msg hit">🎯 Frattesi isabetli şut! <span class="muted">(67')</span><br /><b>✅ TUTTU!</b> <span class="mono">2/2</span> 🟩🟩</div>
+          </div>
+        </div>
+      </article>
+    </section>
+
     <!-- OTOMASYONLAR -->
     <section id="automations" class="section">
       <div class="section-head">
-        <span class="mono tag">02 / otomasyonlar</span>
+        <span class="mono tag">03 / otomasyonlar</span>
         <h2>İş yerinde aktif kullanılan otomasyonlar</h2>
         <p class="muted">Her biri gerçek bir iş akışında, her gün çalışıyor.</p>
       </div>
@@ -449,7 +510,7 @@
     <!-- IOT & DIY -->
     <section id="iot" class="section">
       <div class="section-head">
-        <span class="mono tag">03 / iot & diy</span>
+        <span class="mono tag">04 / iot & diy</span>
         <h2>Atölyeden projeler</h2>
         <p class="muted">Lehim, ekranlar ve biraz da kod: işten arta kalan zamanlarda yaptıklarım.</p>
       </div>
@@ -503,7 +564,7 @@
     <section id="blog" class="section">
       <div class="section-head row">
         <div>
-          <span class="mono tag">04 / blog</span>
+          <span class="mono tag">05 / blog</span>
           <h2>Gezi, Spor & Oyun</h2>
           <p class="muted">İş dışında kalan zamanlardan: gittiğim yerler, izlediğim maçlar, bitirdiğim oyunlar.</p>
         </div>
@@ -515,7 +576,7 @@
     <!-- YETENEKLER -->
     <section id="skills" class="section">
       <div class="section-head">
-        <span class="mono tag">05 / yetenekler</span>
+        <span class="mono tag">06 / yetenekler</span>
         <h2>Kullandığım araçlar</h2>
       </div>
       <div class="skills">
@@ -541,7 +602,7 @@
     <!-- İLETİŞİM -->
     <section id="contact" class="section contact">
       <div class="card contact-card">
-        <span class="mono tag">06 / iletişim</span>
+        <span class="mono tag">07 / iletişim</span>
         <h2>Birlikte bir şey otomatiğe bağlayalım.</h2>
         <p class="muted">Bir fikriniz, bir projeniz ya da bir rota veya oyun öneriniz mi var? Yazın, konuşalım.</p>
         <div class="hero-actions center">
